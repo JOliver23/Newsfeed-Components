@@ -85,6 +85,13 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: "Copleted!!!!",
+    date: 'Mar 16th, 2020',
+    firstParagraph: "The ideal program has a crystal-clear structure. The way it works is easy to explain, and each part plays a well-defined role.",
+    secondParagraph: "Very Cool",
+    thirdParagraph: "Tight!"
   }
 ];
 
@@ -109,7 +116,7 @@ console.log(container);
 function articleCreator(data) {
   const article = document.createElement('div');
   article.classList.add('article');
-  container.appendChild(article);
+  
 
   const title = document.createElement('h2');
   title.textContent = data.title;
@@ -132,16 +139,25 @@ function articleCreator(data) {
   content3.textContent = data.thirdParagraph;
   article.appendChild(content3);
   
+  const open = '\u25bc';
   const button = document.createElement('span');
   button.classList.add('expandButton');
+  button.textContent = open;
+  button.addEventListener('click', ()=> {
+    article.classList.toggle('article-open')
+  });
   article.appendChild(button);
   
+
   return article;
 }
-let first = articleCreator(data[0]);
-let second = articleCreator(data[1]);
-let third = articleCreator(data[2]);
-let fourth = articleCreator(data[3]);
+data.forEach(data => {
+  container.appendChild(articleCreator(data));
+})
+// let first = articleCreator(data[0]);
+// let second = articleCreator(data[1]);
+// let third = articleCreator(data[2]);
+// let fourth = articleCreator(data[3]);
 //console.log(first);
 
   //Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
