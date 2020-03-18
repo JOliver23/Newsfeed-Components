@@ -87,7 +87,7 @@ const data = [
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
   },
   {
-    title: "Copleted!!!!",
+    title: "Completed!!!!",
     date: 'Mar 16th, 2020',
     firstParagraph: "The ideal program has a crystal-clear structure. The way it works is easy to explain, and each part plays a well-defined role.",
     secondParagraph: "Very Cool",
